@@ -25,6 +25,19 @@ namespace JSONExercise1
                 Console.WriteLine("Please write down your age:");
                 string input = (Console.ReadLine());
 
+                //Skapar en if-sats för att kolla om inmatningen är korrekt.
+                //Med en console.writeline som kommer att skriva upp en text med användarens input
+
+                if (int.TryParse(input, out int age))
+                {
+                    Console.WriteLine($"Your name is {user.name} and you are {user.age} years old.");
+                }
+                //Ifall användaren skriver in något annat än en siffra. Kör else
+                else
+                {
+                    Console.WriteLine("Invalid input for age. Please enter a valid number.");
+                }
+
             }
 
         }
