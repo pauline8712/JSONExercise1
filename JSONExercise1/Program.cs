@@ -30,7 +30,10 @@ namespace JSONExercise1
 
                 if (int.TryParse(input, out int age))
                 {
-                    Console.WriteLine($"Your name is {user.name} and you are {user.age} years old.");
+                    string stringjson = JsonSerializer.Serialize(user);
+                    File.WriteAllText("user.json", stringjson);
+                    
+                    Console.WriteLine($"Your name is {user.Name} and you are {user.Age} years old.");
                 }
                 //Ifall användaren skriver in något annat än en siffra. Kör else
                 else
