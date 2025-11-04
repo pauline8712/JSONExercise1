@@ -8,6 +8,10 @@ namespace JSONExercise1
 //Be användaren skriva sitt namn och ålder, och spara det i en JSON-fil(user.json).
 // 💡 Tips: använd JsonSerializer.Serialize() och File.WriteAllText().
 
+
+//📖 2. Läs och visa JSON-filen
+//Läs in filen du skapade i förra övningen och skriv ut innehållet i konsolen.
+// 💡 Tips: använd JsonSerializer.Deserialize<T>().
     internal class Program
     {
         static void Main(string[] args)
@@ -44,6 +48,14 @@ namespace JSONExercise1
                 {
                     Console.WriteLine("Invalid input for age. Please enter a valid number.");
                 }
+
+                //the next step is to deserialize it
+                string jsonFromFile = File.ReadAllText("user.json");
+                User loadedUser = JsonSerializer.Deserialize<User>(jsonFromFile);
+
+                //Then added some console writelines to show the deserialized data
+                Console.WriteLine($"Name: {loadedUser.Name}");
+                Console.WriteLine($"Age: {loadedUser.Age}");
 
             }
 
