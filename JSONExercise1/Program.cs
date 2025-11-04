@@ -12,6 +12,9 @@ namespace JSONExercise1
 //📖 2. Läs och visa JSON-filen
 //Läs in filen du skapade i förra övningen och skriv ut innehållet i konsolen.
 // 💡 Tips: använd JsonSerializer.Deserialize<T>().
+
+//⚙️ 3. Try/Catch – fel vid inmatning
+//Låt användaren skriva in ett tal.Om användaren skriver något som inte är ett tal, fånga felet med try/catch och visa ett meddelande:
     internal class Program
     {
         static void Main(string[] args)
@@ -31,22 +34,21 @@ namespace JSONExercise1
 
                 //Skapar en if-sats för att kolla om inmatningen är korrekt.
                 //Med en console.writeline som kommer att skriva upp en text med användarens input
-
-                if (int.TryParse(input, out int age))
+                try
                 {
-                    //Här är jag osäker varför den ska vara med i ifsatsen. Men om jag förstår det rätt
-                    //Så behöver jag den där så att inmatningen på ålder sparas i jsonfilen
-                    user.Age = age;
-                    //Skapar en jsonfile och berättar för programmet att jag vill flytta objektet till en jsonfile
+                    // Försök konvertera inmatningen till int
+                    user.Age = int.Parse(Console.ReadLine());
+
+                    // Serialisera och spara till JSON
                     string stringjson = JsonSerializer.Serialize(user);
                     File.WriteAllText("user.json", stringjson);
-                    
+
                     Console.WriteLine($"Your name is {user.Name} and you are {user.Age} years old.");
                 }
-                //Ifall användaren skriver in något annat än en siffra. Kör else
-                else
+                catch (FormatException)
                 {
-                    Console.WriteLine("Invalid input for age. Please enter a valid number.");
+                    Console.WriteLine("Invalid input! Please enter a valid number for age.");
+                    return; // Avslutar programmet om inmatningen var fel
                 }
 
                 //the next step is to deserialize it
