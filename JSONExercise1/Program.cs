@@ -30,6 +30,10 @@ namespace JSONExercise1
 
                 if (int.TryParse(input, out int age))
                 {
+                    //Här är jag osäker varför den ska vara med i ifsatsen. Men om jag förstår det rätt
+                    //Så behöver jag den där så att inmatningen på ålder sparas i jsonfilen.
+                    user.Age = age;
+                    //Skapar en jsonfile och berättar för programmet att jag vill flytta objektet till en jsonfile
                     string stringjson = JsonSerializer.Serialize(user);
                     File.WriteAllText("user.json", stringjson);
                     
