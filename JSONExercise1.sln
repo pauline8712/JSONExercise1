@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONExercise1", "JSONExercise1\JSONExercise1.csproj", "{32DD8B80-3927-4615-B885-2F72EE10284A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32DD8B80-3927-4615-B885-2F72EE10284A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DD8B80-3927-4615-B885-2F72EE10284A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DD8B80-3927-4615-B885-2F72EE10284A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DD8B80-3927-4615-B885-2F72EE10284A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB57FE6C-C1DF-4B00-B3E5-4BD2655854F2}
+	EndGlobalSection
+EndGlobal
